@@ -582,6 +582,149 @@ task publish:force -- 'MINOR UPDATE'
 task publish:force -- 'MAJOR UPDATE'
 ```
 
+## NvChad Integration
+
+Install Doctor includes **NvChad**, a high-performance Neovim framework with beautiful UI and blazing-fast startup times (~0.02-0.07 seconds).
+
+### What is NvChad?
+
+NvChad is a Lua-based Neovim configuration framework featuring:
+- **Base46 Theming**: 68+ themes with real-time switching
+- **Lazy Loading**: ~93% of plugins load on-demand for performance
+- **UI Components**: Statusline, tabufline, terminal integration, dashboard (nvdash)
+- **LSP Integration**: mason.nvim for easy LSP/DAP/linter/formatter installation
+- **Modern Plugins**: Telescope, nvim-tree, tree-sitter, nvim-cmp, gitsigns
+- **Auto-generated Cheatsheet**: Press `<leader> + ch` to view all keybindings
+
+### Installation
+
+NvChad is automatically configured when you provision with Install Doctor:
+
+```bash
+# Standard provisioning installs Neovim with NvChad
+bash <(curl -sSL https://install.doctor/start)
+```
+
+After first launch of `nvim`, run:
+```vim
+:MasonInstallAll
+```
+
+This installs all configured LSP servers, linters, and formatters.
+
+### Configuration Files
+
+**Location:** `~/.config/nvim/` (managed via chezmoi external)
+
+**Key Files:**
+- `init.lua` - Entry point, bootstraps lazy.nvim and loads NvChad
+- `lua/chadrc.lua` - User customizations (themes, UI options)
+- `lua/plugins/` - Custom plugin overrides (directory is git-ignored)
+- `lua/options.lua` - Neovim option overrides
+- `lua/mappings.lua` - Custom keymapping overrides
+
+### Dependencies
+
+Automatically installed:
+- **Neovim 0.11+** - Core editor
+- **Nerd Font (Hack)** - Icon support
+- **ripgrep** - Telescope search backend
+- **fd** - Fast file finder
+- **lazygit** - Git TUI integration
+- **tree-sitter-cli** - Parser generator
+- **gcc/make/build-essential** - Compiler for tree-sitter parsers
+- **node.js** - Required for some LSP servers
+
+### Customization
+
+**Change Theme:**
+Press `<leader> + th` (spacebar + t + h) to open theme picker
+
+**Edit Configuration:**
+```bash
+nvim ~/.config/nvim/lua/chadrc.lua
+```
+
+**Override Plugin Settings:**
+Create files in `~/.config/nvim/lua/plugins/` following the lazy.nvim specification:
+
+```lua
+-- Example: lua/plugins/telescope.lua
+return {
+  "nvim-telescope/telescope.nvim",
+  opts = {
+    defaults = {
+      layout_strategy = "vertical",
+    },
+  },
+}
+```
+
+**Add LSP Servers:**
+1. Edit your configuration to specify servers
+2. Run `:MasonInstall <server-name>` or `:MasonInstallAll`
+
+Common LSP servers: `lua_ls`, `pyright`, `ts_ls`, `rust_analyzer`, `clangd`, `gopls`
+
+### Common Commands
+
+```vim
+:Lazy              " Plugin manager UI
+:Mason             " LSP/formatter/linter manager UI
+:MasonInstallAll   " Install all configured tools
+:NvCheatsheet      " Show keybinding cheatsheet
+:Telescope keymaps " Search all keybindings
+:checkhealth       " Diagnose Neovim setup
+```
+
+### Key Bindings
+
+**Leader Key:** `<Space>`
+
+Essential bindings:
+- `<leader>ff` - Find files
+- `<leader>fw` - Find word (grep)
+- `<leader>fb` - Find buffers
+- `<leader>fh` - Find help
+- `<leader>th` - Theme picker
+- `<leader>ch` - Cheatsheet
+- `<C-n>` - Toggle file tree
+- `<leader>h/v/n` - New horizontal/vertical/tab terminal
+
+### Updating NvChad
+
+NvChad updates automatically via chezmoi's weekly refresh:
+```bash
+chezmoi update
+```
+
+Force update immediately:
+```bash
+chezmoi update --refresh-externals=always
+```
+
+Or update from within Neovim:
+```vim
+:Lazy sync
+```
+
+### Replacing AstroNvim
+
+Install Doctor previously used AstroNvim but now defaults to NvChad for:
+- Better performance (faster startup)
+- Simpler configuration architecture
+- Larger community (27.5k+ GitHub stars)
+- More active development
+- Easier customization via starter template pattern
+
+### References
+
+- **NvChad Docs:** https://nvchad.com/docs/quickstart/install
+- **NvChad GitHub:** https://github.com/NvChad/NvChad
+- **NvChad Starter:** https://github.com/NvChad/starter
+- **Mason.nvim:** https://github.com/mason-org/mason.nvim
+- **Neovim Docs:** https://neovim.io/doc/
+
 ## Additional Resources
 
 - **Documentation:** `docs/` directory

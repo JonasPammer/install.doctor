@@ -368,7 +368,9 @@
     clone.args = ["--branch", "release", "--depth", "1"]
     pull.args = ["--ff-only"]
 
-### NVIM
+### NVIM (NvChad)
 [".config/nvim"]
     type = "git-repo"
-    url = "https://github.com/megabyte-labs/AstronVim.git"
+    url = "https://github.com/NvChad/starter.git"
+    refreshPeriod = "168h"
+    {{ $gitArgs }}

@@ -98,3 +98,8 @@ private_dot_ssh/encrypted_ssh-13147527.pub
 private_dot_ssh/encrypted_ssh-13196452.pub
 private_dot_ssh/encrypted_ssh-13196452
 {{- end }}
+
+### NvChad cache and runtime directories
+dot_local/state/nvim/**
+dot_local/share/nvim/**
+dot_cache/nvim/**

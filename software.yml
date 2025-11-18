@@ -680,7 +680,7 @@ softwarePackages:
       - python
       - ripgrep
       - tree-sitter
-    _deprecated: AstronVIM is deprecated in favor of NvChad which has more stars and is less troublesome to install (in our experience)
+    _deprecated: AstroNvim is deprecated in favor of NvChad. Install Doctor now uses NvChad by default for Neovim configuration. NvChad offers better performance with ~0.02-0.07s startup time, 68+ themes, lazy plugin loading, and active community support with 27.5k+ GitHub stars. See the neovim package entry for NvChad integration details.
     _desc: "[AstroNvim](https://astronvim.github.io/) is an aesthetic and feature-rich neovim config that is extensible and easy to use with a great set of plugins"
     _docs: https://astronvim.github.io/
     _github: https://github.com/AstroNvim/AstroNvim
@@ -1336,6 +1336,15 @@ softwarePackages:
     _name: BuildKite Agent
     _short: "buildkite/agent is a lightweight build runner for continuous integration.                                                                                                                                 "
     brew: buildkite/buildkite/buildkite-agent
+  build-essential:
+    _bin: null
+    _desc: "[build-essential](https://packages.debian.org/sid/build-essential) is an informational list of build-essential packages for Debian-based systems. It contains an informational list of packages which are considered essential for building Debian packages, including gcc, g++, make, and other development tools."
+    _docs: https://packages.debian.org/sid/build-essential
+    _github: false
+    _name: build-essential
+    _preload: true
+    _short: "build-essential is a meta-package that installs essential development tools on Debian/Ubuntu systems.                                                                                                      "
+    apt: build-essential
   bun:
     _bin: bun
     _desc: "Bun is a tool developed by oven-sh available on GitHub at https://github.com/oven-sh/bun. It is a command-line utility for managing project-specific environments using Docker. Bun simplifies the process\nof setting up and managing development environments by defining project-specific configurations in a Bunfile. This allows developers to easily reproduce the same environment across different machines.  \nBun also supports Docker Compose integration, making it easier to work with multi-container applications. It's a handy tool for streamlining development workflows and ensuring consistency across        \nenvironments.                                                                                                                                                                                             "
@@ -6626,6 +6635,25 @@ softwarePackages:
     _name: Malwarebytes
     cask: malwarebytes
     choco: malwarebytes
+  make:
+    _bin: make
+    _desc: "[GNU Make](https://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files. Make gets its knowledge of how to build your program from a file called the makefile, which lists each of the non-source files and how to compute it from other files."
+    _docs: https://www.gnu.org/software/make/manual/
+    _github: false
+    _home: https://www.gnu.org/software/make/
+    _name: GNU Make
+    _preload: true
+    _short: "GNU Make is a tool for controlling the generation of executables and other files from source code.                                                                                                           "
+    apk: make
+    apt: make
+    brew: make
+    choco: make
+    dnf: make
+    pacman: make
+    pkg: gmake
+    port: gmake
+    scoop: make
+    winget: GnuWin32.Make
   mambaforge:
     _bin: conda
     _desc: "Mamba is a fast, reliable, and easy-to-use package manager for the conda package manager ecosystem. It aims to improve the performance of package management operations by utilizing parallel downloading \nand processing. Mamba is compatible with conda packages and environments, making it a suitable alternative for users looking for faster package management on their systems. It is particularly useful for\nmanaging large-scale data science and scientific computing environments efficiently. Mamba can be easily installed alongside conda and used as a drop-in replacement for faster package installations and \nupdates.                                                                                                                                                                                                  "
@@ -7467,15 +7495,22 @@ softwarePackages:
   neovim:
     _bin: nvim
     _deps:
+      - build-essential
       - clangd
-      - terraform-ls
+      - fd
+      - gcc
+      - lazygit
+      - make
       - neovim-node-host
-    _desc: "[neovim](https://neovim.io/) is Vim-fork focused on extensibility and usability"
+      - ripgrep
+      - terraform-ls
+      - tree-sitter
+    _desc: "[Neovim](https://neovim.io/) is Vim-fork focused on extensibility and usability. This installation includes [NvChad](https://nvchad.com/), a blazing fast Neovim framework providing solid defaults and a beautiful UI. NvChad features lazy loading, Base46 theming with 68+ themes, statusline, tabufline, LSP integration via mason.nvim, and tree-sitter syntax highlighting."
     _docs: https://neovim.io/doc/general/
     _github: https://github.com/neovim/neovim
     _home: https://neovim.io/
     _preload: true
-    _name: neovim
+    _name: Neovim (with NvChad)
     _short: "Neovim is a highly extensible text editor based on Vim, with improved performance and features for modern development workflows.                                                                          "
     apk: neovim
     apt:
@@ -11611,11 +11646,14 @@ softwarePackages:
   tree-sitter:
     _bin: tree-sitter
     _desc: CLI tool for creating and testing tree-sitter parsers
+    _docs: https://tree-sitter.github.io/tree-sitter/
     _github: https://github.com/tree-sitter/tree-sitter-cli
     _name: tree-sitter-cli
     _preload: true
     _short: "tree-sitter-cli is a command-line interface for interacting with the Tree-sitter parsing library.                                                                                                         "
+    brew: tree-sitter
     cargo: --locked tree-sitter-cli
+    npm: tree-sitter-cli
   trellis:
     _bin: trellis
     _desc: A CLI to manage Trellis projects
