@@ -1,33 +1,24 @@
-<!-- ⚠️ This README has been generated from the file(s) ".config/docs/blueprint-readme-misc.md" ⚠️--><div align="center">
+<div align="center">
   <center>
-    <a href="https://github.com/megabyte-labs/install.doctor">
+    <a href="https://github.com/JonasPammer/install.doctor">
       <img width="320" alt="Install Doctor logo" src="https://gitlab.com/megabyte-labs/install.doctor/-/raw/master/docs/logo-full.png" />
     </a>
   </center>
 </div>
 <div align="center">
   <center><h1 align="center"><i></i>Install Doctor, The Desktop Provisioning System<i></i></h1></center>
-  <center><h4 style="color: #18c3d1;">Maintained by <a href="https://megabyte.space" target="_blank">Megabyte Labs</a></h4><i></i></center>
+  <center><h4 style="color: #18c3d1;">Fork maintained by <a href="https://github.com/JonasPammer" target="_blank">Jonas Pammer</a> | Original by <a href="https://megabyte.space" target="_blank">Megabyte Labs</a></h4><i></i></center>
 </div>
 
 <div align="center">
-  <a href="https://megabyte.space" title="Megabyte Labs homepage" target="_blank">
-    <img alt="Homepage" src="https://img.shields.io/website?down_color=%23FF4136&down_message=Down&label=Homepage&logo=home-assistant&logoColor=white&up_color=%232ECC40&up_message=Up&url=https%3A%2F%2Fmegabyte.space&style=for-the-badge" />
+  <a href="https://github.com/JonasPammer/install.doctor" title="GitHub repository" target="_blank">
+    <img alt="GitHub" src="https://img.shields.io/badge/Repo-GitHub-333333?logo=github&style=for-the-badge" />
   </a>
-  <a href="https://github.com/megabyte-labs/install.doctor/blob/master/docs/CONTRIBUTING.md" title="Learn about contributing" target="_blank">
+  <a href="https://github.com/JonasPammer/install.doctor/blob/master/docs/CONTRIBUTING.md" title="Learn about contributing" target="_blank">
     <img alt="Contributing" src="https://img.shields.io/badge/Contributing-Guide-0074D9?logo=github-sponsors&logoColor=white&style=for-the-badge" />
   </a>
-  <a href="https://app.slack.com/client/T01ABCG4NK1/C01NN74H0LW/details/" title="Chat with us on Slack" target="_blank">
-    <img alt="Slack" src="https://img.shields.io/badge/Slack-Chat-e01e5a?logo=slack&logoColor=white&style=for-the-badge" />
-  </a>
-  <a href="https://app.element.io/#/room/#install.doctor:matrix.org" title="Chat with the community via Matrix.org" target="_blank">
-    <img alt="Matrix" src="https://img.shields.io/matrix/install.doctor:matrix.org?logo=matrix&logoColor=white&style=for-the-badge" />
-  </a>
-  <a href="https://github.com/megabyte-labs/install.doctor" title="GitHub mirror" target="_blank">
-    <img alt="GitHub" src="https://img.shields.io/badge/Mirror-GitHub-333333?logo=github&style=for-the-badge" />
-  </a>
-  <a href="https://gitlab.com/megabyte-labs/install.doctor" title="GitLab repository" target="_blank">
-    <img alt="GitLab" src="https://img.shields.io/badge/Repo-GitLab-fc6d26?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEUAAAD///+l2Z/dAAAAAXRSTlMAQObYZgAAAHJJREFUCNdNxKENwzAQQNEfWU1ZPUF1cxR5lYxQqQMkLEsUdIxCM7PMkMgLGB6wopxkYvAeI0xdHkqXgCLL0Beiqy2CmUIdeYs+WioqVF9C6/RlZvblRNZD8etRuKe843KKkBPw2azX13r+rdvPctEaFi4NVzAN2FhJMQAAAABJRU5ErkJggg==&style=for-the-badge" />
+  <a href="https://github.com/JonasPammer/install.doctor/issues" title="Report an issue" target="_blank">
+    <img alt="Issues" src="https://img.shields.io/badge/Issues-Report-red?logo=github&style=for-the-badge" />
   </a>
 </div>
 
@@ -57,7 +48,7 @@
 
 ## Overview
 
-Want to try out a new desktop jam-packed with a whole suite of GitHub's most-starred projects? Install Doctor is a combination of application settings, theme files, and a performant yet flexible software installer written with [ZX](https://github.com/google/zx). It is easily customizable, with optional prompts that ask you for API keys if you want to completely automate everything. The installer supports almost any operating system, just checkout the [software.yml file](https://gitlab.com/megabyte-labs/install.doctor/-/blob/master/software.yml). It uses [Chezmoi](https://github.com/twpayne/chezmoi) to apply file changes in an interactive way. It is not your typical Chezmoi project - it is built around the philosophy that you should be able to bash all your computers to bits with a hammer and then resurrect them the next day ✝️️ by storing stateful data to an encrypted S3 bucket and automating desktop configuration as much as possible.
+Want to try out a new desktop jam-packed with a whole suite of GitHub's most-starred projects? Install Doctor is a combination of application settings, theme files, and a performant yet flexible software installer written with [ZX](https://github.com/google/zx). It is easily customizable, with optional prompts that ask you for API keys if you want to completely automate everything. The installer supports almost any operating system, just checkout the [software.yml file](https://github.com/JonasPammer/install.doctor/blob/master/software.yml). It uses [Chezmoi](https://github.com/twpayne/chezmoi) to apply file changes in an interactive way. It is not your typical Chezmoi project - it is built around the philosophy that you should be able to bash all your computers to bits with a hammer and then resurrect them the next day ✝️️ by storing stateful data to an encrypted S3 bucket and automating desktop configuration as much as possible.
 
 Install Doctor is a cross-platform development environment provisioning system. The project began as an ongoing Ansible project named [Gas Station](https://github.com/megabyte-labs/gas-station) but transitioned to a dotfile-ish approach for easier adoption and less overhead. It is intended for:
 
@@ -72,22 +63,22 @@ Install Doctor is a cross-platform development environment provisioning system. 
 
 ## Quick Start
 
-To provision your workstation, you can run the following which will install some basic dependencies (e.g. Chezmoi) and provide interactive prompts where you can personalize your configuration:
+To provision your workstation using this fork, run the following command which will install some basic dependencies (e.g. Chezmoi) and provide interactive prompts where you can personalize your configuration:
 
+```bash
+START_REPO=JonasPammer/install.doctor bash <(curl -sSL https://install.doctor/start)
 ```
+
+Or directly with the full git URL:
+
+```bash
+START_REPO=https://github.com/JonasPammer/install.doctor.git bash <(curl -sSL https://install.doctor/start)
+```
+
+If you want to use the original upstream version:
+
+```bash
 bash <(curl -sSL https://install.doctor/start)
-```
-
-If you fork this repository and would like to use your fork as the source, you can still use the command shown above by setting the `START_REPO` environment variable. If it is located on GitHub, you can do this by running:
-
-```
-START_REPO=my-gh-user/my-fork-name bash <(curl -sSL https://install.doctor/start)
-```
-
-Alternatively, if you want to host your project on GitLab or another git provider, then just specify the git remote's URL:
-
-```
-START_REPO=git@gitlab.com:megabyte-labs/install.doctor.git bash <(curl -sSL https://install.doctor/start)
 ```
 
 ### Quick Start Notes
@@ -157,46 +148,20 @@ rm -rf ~/.config/chezmoi && rm -rf ~/.cache/chezmoi
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/megabyte-labs/install.doctor/issues). If you would like to contribute, please take a look at the [contributing guide](https://github.com/megabyte-labs/install.doctor/blob/master/docs/CONTRIBUTING.md).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/JonasPammer/install.doctor/issues). If you would like to contribute, please take a look at the [contributing guide](https://github.com/JonasPammer/install.doctor/blob/master/docs/CONTRIBUTING.md).
 
-<details>
-<summary><b>Sponsorship</b></summary>
-<br/>
-<blockquote>
-<br/>
-Dear Awesome Person,<br/><br/>
-I create open source projects out of love. Although I have a job, shelter, and as much fast food as I can handle, it would still be pretty cool to be appreciated by the community for something I have spent a lot of time and money on. Please consider sponsoring me! Who knows? Maybe I will be able to quit my job and publish open source full time.
-<br/><br/>Sincerely,<br/><br/>
+### Upstream
 
-**_Brian Zalewski_**<br/><br/>
+This is a fork of the original [Install Doctor](https://github.com/megabyte-labs/install.doctor) by [Megabyte Labs](https://megabyte.space). If you'd like to support the original project, check out:
 
-</blockquote>
-
-<a title="Support us on Open Collective" href="https://opencollective.com/megabytelabs" target="_blank">
-  <img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/megabytelabs?logo=opencollective&label=OpenCollective&logoColor=white&style=for-the-badge" />
-</a>
-<a title="Support us on GitHub" href="https://github.com/ProfessorManhattan" target="_blank">
-  <img alt="GitHub sponsors" src="https://img.shields.io/github/sponsors/ProfessorManhattan?label=GitHub%20sponsors&logo=github&style=for-the-badge" />
-</a>
-<a href="https://www.patreon.com/ProfessorManhattan" title="Support us on Patreon" target="_blank">
-  <img alt="Patreon" src="https://img.shields.io/badge/Patreon-Support-052d49?logo=patreon&logoColor=white&style=for-the-badge" />
-</a>
-
-### Affiliates
-
-Below you will find a list of services we leverage that offer special incentives for signing up for their services through our special links:
-
-<a href="http://eepurl.com/h3aEdX" title="Sign up for $30 in MailChimp credits" target="_blank">
-  <img alt="MailChimp" src="https://cdn-images.mailchimp.com/monkey_rewards/grow-business-banner-2.png" />
-</a>
-<a href="https://www.digitalocean.com/?refcode=751743d45e36&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
-  <img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt="DigitalOcean Referral Badge" />
-</a>
-
-</details>
+- [Original Repository](https://github.com/megabyte-labs/install.doctor)
+- [Sponsor Brian Zalewski](https://github.com/sponsors/ProfessorManhattan) (original author)
 
 <a href="#license" style="width:100%"><img style="width:100%" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png" /></a>
 
 ## License
 
-Copyright © 2020-2021 [Megabyte LLC](https://megabyte.space). This project is [MIT](https://gitlab.com/megabyte-labs/install.doctor/-/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/JonasPammer/install.doctor/blob/master/LICENSE) licensed.
+
+Original Copyright © 2020-2021 [Megabyte LLC](https://megabyte.space).
+Fork maintained by [Jonas Pammer](https://github.com/JonasPammer).
