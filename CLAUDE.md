@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
+This is a fork of [Install Doctor](https://github.com/megabyte-labs/install.doctor) maintained by **Jonas Pammer** (JonasPammer).
+
 Install Doctor is a cross-platform desktop provisioning and dotfile management system designed to automate workstation setup and enable complete environment reproducibility. The project philosophy: "Bash all your computers to bits with a hammer and resurrect them the next day" by storing stateful data in encrypted S3 buckets and automating desktop configuration.
 
 **Key Technologies:**
@@ -24,14 +26,14 @@ Install Doctor is a cross-platform desktop provisioning and dotfile management s
 ### Initial Provisioning
 
 ```bash
-# Standard installation
+# Using this fork (JonasPammer's version)
+START_REPO=JonasPammer/install.doctor bash <(curl -sSL https://install.doctor/start)
+
+# Or with full git URL
+START_REPO=https://github.com/JonasPammer/install.doctor.git bash <(curl -sSL https://install.doctor/start)
+
+# Using original upstream version
 bash <(curl -sSL https://install.doctor/start)
-
-# With custom fork
-START_REPO=my-gh-user/my-fork-name bash <(curl -sSL https://install.doctor/start)
-
-# With GitLab or custom git provider
-START_REPO=git@gitlab.com:user/repo.git bash <(curl -sSL https://install.doctor/start)
 ```
 
 ### Development Workflow
@@ -584,8 +586,7 @@ task publish:force -- 'MAJOR UPDATE'
 
 - **Documentation:** `docs/` directory
 - **Contributing Guide:** `docs/CONTRIBUTING.md`
-- **Ecosystem:** `docs/ECOSYSTEM.md`
 - **Code of Conduct:** `docs/CODE_OF_CONDUCT.md`
+- **This Fork:** https://github.com/JonasPammer/install.doctor
+- **Original Project:** https://github.com/megabyte-labs/install.doctor (by Megabyte Labs)
 - **Main Website:** https://install.doctor
-- **GitHub:** https://github.com/megabyte-labs/install.doctor
-- **GitLab:** https://gitlab.com/megabyte-labs/install.doctor
